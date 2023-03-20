@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LLC</string>
+    <string name="title_x">X:</string>
+    <string name="title_y">Y:</string>
+    <string name="button_go">Go</string>
+    <string name="input_text">Введите количество точек. Можно запросить от 1 до 1000 точек</string>
+    <string name="error_message">Произошла ошибка</string>
+    <string name="file_saved">Файл сохранен</string>
+</resources>
