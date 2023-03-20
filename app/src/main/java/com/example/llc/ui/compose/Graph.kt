@@ -41,46 +41,28 @@ fun Graph(points: List<Point>, unitState: Int) = Canvas(
         strokeWidth = strokeWidth
     )
 
-    fun drawDelimiterY(y: Float) = drawLine(
-        color = Color.Black,
-        start = Offset(center.x - delimiterSize, y),
-        end = Offset(center.x + delimiterSize, y),
-        strokeWidth = strokeWidth
-    )
-
     var index = 1
-    var y = center.y + index * unit
+    var y = index * unit
     while (y < size.height) {
-        drawDelimiterY(y)
+        drawLine(
+            color = Color.Black,
+            start = Offset(center.x - delimiterSize, y),
+            end = Offset(center.x + delimiterSize, y),
+            strokeWidth = strokeWidth
+        )
         y = center.y + ++index * unit
     }
 
     index = 1
-    y = center.y - index * unit
-    while (y > 0) {
-        drawDelimiterY(y)
-        y = center.y - ++index * unit
-    }
-
-    fun drawDelimiterX(x: Float) = drawLine(
-        color = Color.Black,
-        start = Offset(x, center.y - delimiterSize),
-        end = Offset(x, center.y + delimiterSize),
-        strokeWidth = strokeWidth
-    )
-
-    index = 1
-    var x = center.x + index * unit
+    var x = index * unit
     while (x < size.width) {
-        drawDelimiterX(x)
+        drawLine(
+            color = Color.Black,
+            start = Offset(x, center.y - delimiterSize),
+            end = Offset(x, center.y + delimiterSize),
+            strokeWidth = strokeWidth
+        )
         x = center.x + ++index * unit
-    }
-
-    index = 1
-    x = center.x - index * unit
-    while (x > 0) {
-        drawDelimiterX(x)
-        x = center.x - ++index * unit
     }
 
     drawLine(
